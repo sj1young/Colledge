@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Colledge</string>
     <string name="nameFirst">Coll</string>
-    <string name="namelast">edge</string>
+    <string name="nameLast">edge</string>
+    <string name="GPASuite">GPA Calculator</string>
+    <string name="clubFeed">Browse Club Events</string>
 </resources>
