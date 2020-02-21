@@ -4,4 +4,5 @@
     <string name="nameLast">edge</string>
     <string name="GPASuite">GPA Calculator</string>
     <string name="clubFeed">Browse Club Events</string>
+    <string name="diningHours">View Dining Hall Hours</string>
 </resources>
