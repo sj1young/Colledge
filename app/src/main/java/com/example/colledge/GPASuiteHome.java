@@ -43,6 +43,25 @@ public class GPASuiteHome extends AppCompatActivity {
             asg[numAssigns] = new assignment(t, poss, e);
             numAssigns++;
         }
+
+        private double calcGrade(){
+            double currWeight;
+            double[] typePoss = new double[numTypes];
+            double[] typeEarned = new double[numTypes];
+
+            double runningTotal;
+            for(int i=0; i<numAssigns;i++){
+                currWeight = 0;
+                for(int j=0;j<numTypes;j++){
+                    if(asg[i].type.equals(typeNames[j]))
+                    {
+                        currWeight = typeWeights[j];
+                    }
+                }
+                //runningTotal+=
+            }
+            return 0;
+        }
     }
 
     public class assignment{
