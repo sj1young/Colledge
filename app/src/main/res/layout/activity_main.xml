@@ -36,17 +36,6 @@
         app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/carter_one"
-        android:text="@string/nameFirst"
-        android:textColor="@color/colorPrimary"
-        android:textSize="55sp"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
-
-    <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,6 +45,17 @@
         android:textSize="55sp"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/nameFirst"
+        android:textColor="@color/colorPrimary"
+        android:textSize="55sp"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
     <view
         android:id="@+id/view"
@@ -75,6 +75,7 @@
         android:layout_marginTop="60dp"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/carter_one"
+        android:onClick="startGPA"
         android:text="@string/GPASuite"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
