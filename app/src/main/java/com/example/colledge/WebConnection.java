@@ -1,28 +1,16 @@
 package com.example.colledge;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.net.UrlQuerySanitizer;
-import android.os.AsyncTask;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import com.squareup.picasso.Picasso;
 
-import org.json.JSONObject;
-
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 
 public class WebConnection extends Fragment {
@@ -64,12 +52,12 @@ public class WebConnection extends Fragment {
     }
 
     private class DownloadFromNetwork extends AppCompatActivity {
-            public Object doInBackground(String[] args){
+            public Object doInBackground(String[] args, Context parent){
 
                 switch (args[0]){
                     case "img":
                         ImageView view = findViewById(R.id.fragImage);
-                        String url = args[1];
+                        Picasso.with(parent).load(args[1]).into(view);
                 }
 
                 return null;
