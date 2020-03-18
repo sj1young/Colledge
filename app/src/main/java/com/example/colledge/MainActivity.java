@@ -20,4 +20,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GPASuiteHome.class);
         startActivity(intent);
     }
+
+    public void startBus(View view){
+        Intent intent = new Intent(this, ScheduleViewer.class);
+        startActivity(intent);
+    }
 }
