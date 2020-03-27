@@ -16,9 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".AssignmentEditor"
+            android:parentActivityName=".Courses"/>
         <activity
             android:name=".Courses"
-            android:parentActivityName=".GPASuiteHome"/>
+            android:parentActivityName=".GPASuiteHome" />
         <activity
             android:name=".ScheduleViewer"
             android:parentActivityName=".MainActivity" />

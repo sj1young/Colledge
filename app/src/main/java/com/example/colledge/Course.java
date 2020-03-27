@@ -1,6 +1,8 @@
 package com.example.colledge;
 
-public class Course {
+import java.io.Serializable;
+
+public class Course implements Serializable {
     private Assignment[] asg;
     private double[] typeWeights;
     private String[] typeNames;
@@ -9,6 +11,7 @@ public class Course {
     private double grade;
     private int numTypes;
     private int numAssigns;
+    private int currAsg;
 
     public Course(String n){
         name = n;
@@ -19,6 +22,7 @@ public class Course {
         asg = new Assignment[50];
         numTypes = 0;
         numAssigns = 0;
+        currAsg = 0;
     }
 
     public boolean addGradeType(String n, double w){
@@ -33,12 +37,37 @@ public class Course {
         return true;
     }
 
-    public void addAssignment(String t,String n, double poss, double e){
-        asg[numAssigns] = new Assignment(t, n, poss, e);
+    public void addAssignment(String t,String n, String possible, String earned){
+        double p = Double.parseDouble(possible);
+        double e = Double.parseDouble(earned);
+        asg[numAssigns] = new Assignment(t, n, p, e);
         numAssigns++;
+        if(numAssigns == asg.length){
+            Assignment[] newasg = new Assignment[asg.length*2];
+            for(int i=0;i<asg.length;i++)
+            {
+                newasg[i] = asg[i];
+            }
+            asg = newasg;
+        }
+    }
+
+    public void removeAssignment(String n){
+        for(int i=0;i<numAssigns;i++) {
+            if (asg[i].name.equals(n)) {
+                for (int j = i; j < asg.length - 2; j++) {
+                    asg[j] = asg[j + 1];
+                }
+                asg[asg.length - 1] = null;
+            }
+
+        }
     }
 
     public double calcGrade(){
+        if(numAssigns ==0)
+            return 0;
+
         double runningTotal;
         double[] typePoss = new double[numTypes];
         double[] typeEarned = new double[numTypes];
@@ -57,6 +86,19 @@ public class Course {
         {
             runningTotal = runningTotal + ((typeEarned[i]/typePoss[i])*typeWeights[i]);
         }
+
+        if(runningTotal<60)
+            letterGrade = 'F';
+        if(runningTotal<70)
+            letterGrade='D';
+        if(runningTotal<80)
+            letterGrade='C';
+        if(runningTotal<90)
+            letterGrade='B';
+        else
+            letterGrade='A';
+
+
         return runningTotal;
     }
 
@@ -70,6 +112,45 @@ public class Course {
 
     public int getNumAssigns(){
         return numAssigns;
+    }
+
+    public String toString(){
+        return name+ "\n" + calcGrade() + "\n" + letterGrade;
+
+    }
+
+    public String allAssignments(){
+        String a = "Name\tType\tPossible\tEarned\n";
+        if(numAssigns == 0)
+            return a + "N/A";
+        for (int i=0; i<numAssigns;i++){
+            a += asg[i].name + "\t" + asg[i].type + "\t" + asg[i].possible + "\t" + asg[i].earned + "\n";
+        }
+        return a;
+    }
+
+    public String getCurrAsg(){
+        if(numAssigns==0)
+            return "N/A";
+        return asg[currAsg].name + "\t" + asg[currAsg].type + "\t" + asg[currAsg].possible + "\t" +asg[currAsg].earned;
+    }
+
+    public String nextAsg(){
+        currAsg++;
+        if(currAsg==numAssigns)
+            currAsg = 0;
+        return getCurrAsg();
+    }
+
+    public String prevAsg(){
+        currAsg--;
+        if(currAsg==-1)
+            currAsg = numAssigns;
+        return getCurrAsg();
+    }
+
+    public void removeCurrAssignment(){
+        removeAssignment(asg[currAsg].name);
     }
 }
 

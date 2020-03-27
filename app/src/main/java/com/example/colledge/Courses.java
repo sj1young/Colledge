@@ -2,9 +2,12 @@ package com.example.colledge;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import java.io.Serializable;
 
 public class Courses extends AppCompatActivity {
     private Course[] courses;
@@ -20,6 +23,16 @@ public class Courses extends AppCompatActivity {
         currCourse = 0;
     }
 
+    public void startAssignEditor(View view){
+        Intent intent = new Intent(this, AssignmentEditor.class);
+        intent.putExtra("activeCourse",courses[currCourse]);
+        startActivity(intent);
+    }
+
+    public Course getActiveCourse(){
+        return courses[currCourse];
+    }
+
     public void createCourse(View view){
         TextView name = findViewById(R.id.newCourseName);
         Course newest = new Course(name.getText().toString());
@@ -30,6 +43,8 @@ public class Courses extends AppCompatActivity {
          */
         courses[numCourses] = newest;
         numCourses++;
+        TextView viewer = findViewById(R.id.displaysCourses);
+        viewer.setText(courses[numCourses-1].getName());
     }
 
     public String coursesToString()
@@ -54,7 +69,7 @@ public class Courses extends AppCompatActivity {
         if(currCourse < 0)
             currCourse = numCourses;
         TextView viewer = findViewById(R.id.displaysCourses);
-        viewer.setText(courses[currCourse].getName());
+        viewer.setText(courses[currCourse].toString());
 
     }
 }

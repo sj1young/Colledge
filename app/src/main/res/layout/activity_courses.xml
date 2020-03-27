@@ -9,11 +9,11 @@
 
     <Button
         android:id="@+id/button15"
-        android:layout_width="32dp"
+        android:layout_width="41dp"
         android:layout_height="41dp"
         android:background="@color/colorAccent"
         android:onClick="prevCourse"
-        android:text="<-"
+        android:text="Prev"
         app:layout_constraintBottom_toBottomOf="@+id/displaysCourses"
         app:layout_constraintEnd_toStartOf="@+id/displaysCourses"
         app:layout_constraintHorizontal_bias="0.577"
@@ -23,8 +23,8 @@
     <TextView
         android:id="@+id/displaysCourses"
         android:layout_width="256dp"
-        android:layout_height="199dp"
-        android:layout_marginTop="108dp"
+        android:layout_height="198dp"
+        android:layout_marginTop="76dp"
         android:background="@color/colorPrimary"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,11 +34,11 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="32dp"
-        android:layout_height="41dp"
+        android:layout_width="42dp"
+        android:layout_height="39dp"
         android:background="@color/colorAccent"
         android:onClick="nextCourse"
-        android:text="->"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="@+id/displaysCourses"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.687"
@@ -52,8 +52,8 @@
         android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
         android:ems="10"
+        android:hint="Enter Course name"
         android:inputType="textPersonName"
-        android:text="Enter Course Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -98,9 +98,23 @@
         android:layout_height="61dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/colorPrimary"
+        android:onClick="createCourse"
         android:text="Create New Course"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newCourseName" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="146dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:onClick="startAssignEditor"
+        android:text="Edit this course"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/displaysCourses" />
 </androidx.constraintlayout.widget.ConstraintLayout>
