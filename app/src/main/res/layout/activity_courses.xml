@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".Courses">
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="32dp"
+        android:layout_height="41dp"
+        android:background="@color/colorAccent"
+        android:onClick="prevCourse"
+        android:text="<-"
+        app:layout_constraintBottom_toBottomOf="@+id/displaysCourses"
+        app:layout_constraintEnd_toStartOf="@+id/displaysCourses"
+        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/displaysCourses" />
+
+    <TextView
+        android:id="@+id/displaysCourses"
+        android:layout_width="256dp"
+        android:layout_height="199dp"
+        android:layout_marginTop="108dp"
+        android:background="@color/colorPrimary"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button14" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="32dp"
+        android:layout_height="41dp"
+        android:background="@color/colorAccent"
+        android:onClick="nextCourse"
+        android:text="->"
+        app:layout_constraintBottom_toBottomOf="@+id/displaysCourses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toEndOf="@+id/displaysCourses"
+        app:layout_constraintTop_toTopOf="@+id/displaysCourses" />
+
+    <EditText
+        android:id="@+id/newCourseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter Course Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <view
+        android:id="@+id/view2"
+        class="androidx.appcompat.widget.AppCompatTextView"
+        android:layout_width="242dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/nameLast"
+        android:textColor="@color/colorAccent"
+        android:textSize="55sp"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/nameFirst"
+        android:textColor="@color/colorPrimary"
+        android:textSize="55sp"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="146dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Create New Course"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newCourseName" />
+</androidx.constraintlayout.widget.ConstraintLayout>
