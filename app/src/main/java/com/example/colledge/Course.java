@@ -37,10 +37,10 @@ public class Course implements Serializable {
         return true;
     }
 
-    public void addAssignment(String t,String n, String possible, String earned){
+    public void addAssignment(String n,String t, String possible, String earned){
         double p = Double.parseDouble(possible);
         double e = Double.parseDouble(earned);
-        asg[numAssigns] = new Assignment(t, n, p, e);
+        asg[numAssigns] = new Assignment(n, t, p, e);
         numAssigns++;
         if(numAssigns == asg.length){
             Assignment[] newasg = new Assignment[asg.length*2];
@@ -59,9 +59,11 @@ public class Course implements Serializable {
                     asg[j] = asg[j + 1];
                 }
                 asg[asg.length - 1] = null;
+                break;
             }
-
         }
+        if(numAssigns>0)
+            numAssigns--;
     }
 
     public double calcGrade(){

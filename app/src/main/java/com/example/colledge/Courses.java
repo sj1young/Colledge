@@ -57,6 +57,11 @@ public class Courses extends AppCompatActivity {
     }
 
     public void nextCourse(View view){
+        if(numCourses==0) {
+            TextView viewer = findViewById(R.id.displaysCourses);
+            viewer.setText("No Current Courses");
+            return;
+        }
         currCourse++;
         if(currCourse == numCourses)
             currCourse = 0;
@@ -65,6 +70,11 @@ public class Courses extends AppCompatActivity {
     }
 
     public void prevCourse(View view){
+        if(numCourses==0) {
+            TextView viewer = findViewById(R.id.displaysCourses);
+            viewer.setText("No Current Courses");
+            return;
+        }
         currCourse--;
         if(currCourse < 0)
             currCourse = numCourses;
