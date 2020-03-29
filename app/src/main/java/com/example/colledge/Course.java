@@ -7,11 +7,13 @@ public class Course implements Serializable {
     private double[] typeWeights;
     private String[] typeNames;
     private String name;
-    private char letterGrade;
+    private String letterGrade;
     private double grade;
     private int numTypes;
     private int numAssigns;
     private int currAsg;
+    private int credits;
+    private double classGPA;
 
     public Course(String n){
         name = n;
@@ -23,6 +25,22 @@ public class Course implements Serializable {
         numTypes = 0;
         numAssigns = 0;
         currAsg = 0;
+        credits = 0;
+    }
+
+    public void setCredits(int cred)
+    {
+        credits = cred;
+    }
+
+    public int getCredits()
+    {
+        return credits;
+    }
+
+    public double getClassGPA()
+    {
+        return classGPA;
     }
 
     public boolean addGradeType(String n, double w){
@@ -90,15 +108,65 @@ public class Course implements Serializable {
         }
 
         if(runningTotal<60)
-            letterGrade = 'F';
-        if(runningTotal<70)
-            letterGrade='D';
-        if(runningTotal<80)
-            letterGrade='C';
-        if(runningTotal<90)
-            letterGrade='B';
+        {
+            letterGrade = "F";
+            classGPA = 0;
+        }
+        else if(runningTotal < 62.5)
+        {
+            letterGrade = "D-";
+            classGPA = 0.75;
+        }
+        else if(runningTotal<67.5)
+        {
+            letterGrade="D";
+            classGPA = 1;
+        }
+        else if(runningTotal<70)
+        {
+            letterGrade="D+";
+            classGPA = 1.25;
+        }
+        else if(runningTotal<72.5)
+        {
+            letterGrade="C-";
+            classGPA = 1.75;
+        }
+        else if(runningTotal<77.5)
+        {
+            letterGrade="C";
+            classGPA = 2;
+        }
+        else if(runningTotal<80)
+        {
+            letterGrade="C+";
+            classGPA = 2.25;
+        }
+        else if(runningTotal<82.5)
+        {
+            letterGrade="B-";
+            classGPA = 2.75;
+        }
+        else if(runningTotal<87.5)
+        {
+            letterGrade="B";
+            classGPA = 3;
+        }
+        else if(runningTotal<90)
+        {
+            letterGrade="B+";
+            classGPA = 3.25;
+        }
+        else if(runningTotal<92.5)
+        {
+            letterGrade="A-";
+            classGPA = 3.75;
+        }
         else
+            {
             letterGrade='A';
+            classGPA = 4;
+        }
 
 
         return runningTotal;

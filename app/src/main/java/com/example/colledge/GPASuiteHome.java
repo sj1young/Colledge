@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 public class GPASuiteHome extends AppCompatActivity {
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,5 +20,22 @@ public class GPASuiteHome extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public double getCumulativeGPA(Courses courseList)
+    {
+        double gradePoints = 0;
+        double totalCredits = 0;
+        for(course : courseList)
+        {
+            totalCredits += course.getCredits();
+            gradePoints += course.getCredits() * course.getClassGPA();
+        }
+
+        return (Math.round((gradePoints/totalCredits) * 100.0) / 100.0);
+    }
+
+    /*public double getSemesterGPA(Courses[] courseList)
+    {
+
+    }*/
 
 }
