@@ -15,18 +15,35 @@ public class Course implements Serializable {
     private int credits;
     private double classGPA;
 
-    public Course(String n){
+    public Course(String n, int creds){
         name = n;
         typeWeights = new double[15];
         typeNames = new String[15];
-        letterGrade = 'F';
+        letterGrade = "F";
         grade = 0;
         asg = new Assignment[50];
         numTypes = 0;
         numAssigns = 0;
         currAsg = 0;
-        credits = 0;
+        credits = creds;
+        classGPA = 0;
     }
+
+    public Course(String n, int creds, double clsGPA)
+    {
+        name = n;
+        typeWeights = new double[15];
+        typeNames = new String[15];
+        letterGrade = parseLetterGrade(clsGPA);
+        grade = 0;
+        asg = new Assignment[50];
+        numTypes = 0;
+        numAssigns = 0;
+        currAsg = 0;
+        credits = creds;
+        classGPA = clsGPA;
+    }
+
 
     public void setCredits(int cred)
     {
@@ -68,6 +85,7 @@ public class Course implements Serializable {
             }
             asg = newasg;
         }
+        calcGrade();
     }
 
     public void removeAssignment(String n){
@@ -82,6 +100,7 @@ public class Course implements Serializable {
         }
         if(numAssigns>0)
             numAssigns--;
+        calcGrade();
     }
 
     public double calcGrade(){
@@ -164,12 +183,68 @@ public class Course implements Serializable {
         }
         else
             {
-            letterGrade='A';
+            letterGrade="A";
             classGPA = 4;
         }
 
 
         return runningTotal;
+    }
+
+    public String parseLetterGrade(double grade)
+    {
+        String letterGrade = "";
+
+        if(grade==0)
+        {
+            letterGrade = "F";
+        }
+        else if(grade == 0.75)
+        {
+            letterGrade = "D-";
+        }
+        else if(grade == 1)
+        {
+            letterGrade="D";
+        }
+        else if(grade == 1.25)
+        {
+            letterGrade="D+";
+        }
+        else if(grade == 1.75)
+        {
+            letterGrade="C-";
+        }
+        else if(grade == 2)
+        {
+            letterGrade="C";
+        }
+        else if(grade == 2.25)
+        {
+            letterGrade="C+";
+        }
+        else if(grade == 2.75)
+        {
+            letterGrade="B-";
+        }
+        else if(grade == 3)
+        {
+            letterGrade="B";
+        }
+        else if(grade == 3.25)
+        {
+            letterGrade="B+";
+        }
+        else if(grade == 3.75)
+        {
+            letterGrade="A-";
+        }
+        else
+        {
+            letterGrade="A";
+        }
+
+        return letterGrade;
     }
 
     public String getName(){
@@ -184,9 +259,14 @@ public class Course implements Serializable {
         return numAssigns;
     }
 
-    public String toString(){
-        return name+ "\n" + calcGrade() + "\n" + letterGrade;
-
+    public String toString()
+    {
+        String ret = "";
+        ret += this.getName();
+        ret += "\nCredits: " + this.getCredits();
+        ret += "\nGrade: " + this.getClassGPA();
+        ret += "\nLetter Grade: " + this.getLetterGrade();
+        return ret;
     }
 
     public String allAssignments(){
@@ -221,6 +301,17 @@ public class Course implements Serializable {
 
     public void removeCurrAssignment(){
         removeAssignment(asg[currAsg].name);
+        calcGrade();
+    }
+
+    public String getLetterGrade()
+    {
+        return letterGrade;
+    }
+
+    public void setGPA(double newGPA)
+    {
+        classGPA = newGPA;
     }
 }
 

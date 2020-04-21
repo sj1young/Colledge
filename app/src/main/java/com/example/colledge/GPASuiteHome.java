@@ -20,22 +20,9 @@ public class GPASuiteHome extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public double getCumulativeGPA(Courses courseList)
-    {
-        double gradePoints = 0;
-        double totalCredits = 0;
-        for(course : courseList)
-        {
-            totalCredits += course.getCredits();
-            gradePoints += course.getCredits() * course.getClassGPA();
-        }
-
-        return (Math.round((gradePoints/totalCredits) * 100.0) / 100.0);
+    public void startGPA(View view){
+        Intent intent = new Intent(this, Courses.class);
+        startActivity(intent);
     }
-
-    /*public double getSemesterGPA(Courses[] courseList)
-    {
-
-    }*/
 
 }
