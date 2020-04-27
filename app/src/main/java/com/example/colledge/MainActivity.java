@@ -25,4 +25,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ScheduleViewer.class);
         startActivity(intent);
     }
+
+    public void startEventsViewer(View view){
+        Intent intent = new Intent(this, EventsViewer.class);
+        startActivity(intent);
+    }
 }
