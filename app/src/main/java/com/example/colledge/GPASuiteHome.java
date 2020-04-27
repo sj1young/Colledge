@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 public class GPASuiteHome extends AppCompatActivity {
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,5 +20,9 @@ public class GPASuiteHome extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void startGPA(View view){
+        Intent intent = new Intent(this, Courses.class);
+        startActivity(intent);
+    }
 
 }
