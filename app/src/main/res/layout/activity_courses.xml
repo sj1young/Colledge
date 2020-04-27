@@ -27,19 +27,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/displaysCourses" />
 
-            <TextView
-                android:id="@+id/displaysCourses"
-                android:layout_width="256dp"
-                android:layout_height="198dp"
-                android:layout_marginTop="76dp"
-                android:background="@color/colorPrimary"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button14" />
+        <TextView
+            android:id="@+id/displaysCourses"
+            android:layout_width="256dp"
+            android:layout_height="198dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button14" />
 
-            <Button
+        <Button
                 android:id="@+id/button2"
                 android:layout_width="42dp"
                 android:layout_height="39dp"
@@ -53,24 +53,24 @@
                 app:layout_constraintTop_toTopOf="@+id/displaysCourses" />
 
 
-            <EditText
-                android:id="@+id/newCourseName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@color/colorPrimary"
-                android:ems="10"
-                android:hint="Enter Course name"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view2" />
+        <EditText
+            android:id="@+id/newCourseName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:ems="10"
+            android:hint="Enter Course name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
 
         <EditText
             android:id="@+id/newCourseCredits"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:background="@color/colorPrimary"
             android:ems="10"
             android:hint="Enter credits"
@@ -83,28 +83,28 @@
             android:id="@+id/newCourseGPA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="72dp"
             android:background="@color/colorPrimary"
             android:ems="10"
             android:hint="Enter GPA (optional)"
-            android:text = "0"
             android:inputType="textPersonName"
+            android:text="0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view2" />
 
-            <view
-                android:id="@+id/view2"
-                class="androidx.appcompat.widget.AppCompatTextView"
-                android:layout_width="242dp"
-                android:layout_height="122dp"
-                android:layout_marginTop="48dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <view
+            android:id="@+id/view2"
+            class="androidx.appcompat.widget.AppCompatTextView"
+            android:layout_width="248dp"
+            android:layout_height="89dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+        <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -127,37 +127,37 @@
                 app:layout_constraintStart_toStartOf="@+id/view2"
                 app:layout_constraintTop_toTopOf="@+id/view2" />
 
-            <Button
-                android:id="@+id/button14"
-                android:layout_width="146dp"
-                android:layout_height="61dp"
-                android:layout_marginTop="90dp"
-                android:backgroundTint="@color/colorPrimary"
-                android:onClick="createCourse"
-                android:text="Create New Course"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newCourseName" />
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="172dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="72dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:onClick="createCourse"
+            android:text="Create New Course"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newCourseName" />
 
-            <Button
-                android:id="@+id/button17"
-                android:layout_width="146dp"
-                android:layout_height="64dp"
-                android:layout_marginTop="56dp"
-                android:backgroundTint="@color/colorPrimary"
-                android:onClick="startAssignEditor"
-                android:text="Edit this course"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/displaysCourses" />
+        <Button
+            android:id="@+id/button17"
+            android:layout_width="146dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:onClick="startAssignEditor"
+            android:text="Edit this course"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/displaysCourses" />
 
         <Button
             android:id="@+id/calcGPAbtn"
             android:layout_width="146dp"
             android:layout_height="64dp"
-            android:layout_marginTop="125dp"
+            android:layout_marginTop="64dp"
             android:backgroundTint="@color/colorPrimary"
             android:onClick="startGPACalc"
             android:text="Calculate GPA"
@@ -165,5 +165,5 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/displaysCourses" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
