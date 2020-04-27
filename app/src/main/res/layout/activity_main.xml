@@ -7,37 +7,6 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="270dp"
-        android:layout_height="86dp"
-        android:layout_marginTop="28dp"
-        android:background="@color/colorPrimary"
-        android:fontFamily="@font/carter_one"
-        android:text="@string/GPASuite"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="270dp"
-        android:layout_height="86dp"
-        android:layout_marginTop="28dp"
-        android:background="@color/colorPrimary"
-        android:fontFamily="@font/carter_one"
-        android:onClick="startEventsViewer"
-        android:text="Event Viewer"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
-
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -63,8 +32,8 @@
     <view
         android:id="@+id/view"
         class="androidx.appcompat.widget.AppCompatTextView"
-        android:layout_width="246dp"
-        android:layout_height="101dp"
+        android:layout_width="242dp"
+        android:layout_height="122dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -75,7 +44,7 @@
         android:id="@+id/button"
         android:layout_width="270dp"
         android:layout_height="86dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="60dp"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/carter_one"
         android:onClick="startGPA"
@@ -90,15 +59,30 @@
         android:id="@+id/button5"
         android:layout_width="270dp"
         android:layout_height="86dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/carter_one"
         android:onClick="startBus"
         android:text="@string/busSched"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="270dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/carter_one"
+        android:onClick="startEventsViewer"
+        android:text="Event Viewer"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
